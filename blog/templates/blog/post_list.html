@@ -6,17 +6,14 @@
             <div>
                 <h1><a href="">Django FISI</a></h1>
             </div>
-
+  
+           {% for post in posts %}
             <div>
-                <p>published: 13.04.2017, 12:14</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Bienvenido a l curso de Taller de Proyectos 2 </p>
-            </div>
-
-            <div>
-                <p>published: 13.04.2017, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Pronto el proyecto help desk by Carolina Cáceda Rodríguez.</p>
-            </div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+             </div>
+           {% endfor %}
+  
         </body>
     </html>
