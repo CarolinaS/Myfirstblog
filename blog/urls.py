@@ -16,9 +16,11 @@ Including another URLconf
 #
 from django.conf.urls import include, url
 from.import views
+from django.conf import settings
 #from django.contrib import admin
 
+app_name = "blog"
 urlpatterns = [
     url(r'^$', views.post_list),
-    url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail),
+    url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name="post_detail"),
 ]
